@@ -80,7 +80,8 @@ void Prefs::SetValue(BMessage * archive) {
 	}
 }
 
-status_t Prefs::Archive(BMessage *archive, bool deep = true) { 
+status_t Prefs::Archive(BMessage *archive, bool deep) { 
+// status_t Prefs::Archive(BMessage *archive, bool deep = true) { 
 	status_t err = B_OK;
 	err = BArchivable::Archive(archive, deep);
 	err |= archive->AddString("class", PREFS_CLASS_NAME); 

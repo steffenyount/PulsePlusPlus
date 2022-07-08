@@ -54,10 +54,12 @@ int GetMinimumViewWidth(Prefs * prefs, int mode) {
 
 bool LoadInDeskbar() {
 	PulseApp *pulseapp = (PulseApp *)be_app;
-	BDeskbar *deskbar = new BDeskbar();
+	BDeskbar 	deskbar;								//BJF
+//	BDeskbar *deskbar = new BDeskbar();
 	// Don't allow two copies in the Deskbar at once
-	if (deskbar->HasItem("DeskbarPulseView")) {
-		delete deskbar;
+	if (deskbar.HasItem("DeskbarPulseView")) {			//BJF
+//	if (deskbar->HasItem("DeskbarPulseView")) {
+//		delete deskbar;
 		return false;
 	}
 	
@@ -66,9 +68,10 @@ bool LoadInDeskbar() {
 			
 	BRect rect(0, 0, width - 1, 15);
 	DeskbarPulseView *replicant = new DeskbarPulseView(rect);
-	status_t err = deskbar->AddItem(replicant);
+	status_t err = deskbar.AddItem(replicant);
+//	status_t err = deskbar->AddItem(replicant);
 	delete replicant;
-	delete deskbar;
+//	delete deskbar;
 	if (err != B_OK) {
 		BAlert *alert = new BAlert(NULL, strerror(err), "OK");
 		alert->Go(NULL);

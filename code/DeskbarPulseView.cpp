@@ -47,7 +47,8 @@ DeskbarPulseView::DeskbarPulseView(BMessage *message) : MiniPulseView(message) {
 	prefswindow = NULL;
 }
 
-void DeskbarPulseView::AttachedToWindow() {
+void DeskbarPulseView::AttachedToWindow() 
+{
 	BMessenger messenger(this);
 	if (prefs != NULL) prefs = new Prefs(true);
 	mode1->SetTarget(messenger);
@@ -138,12 +139,16 @@ void DeskbarPulseView::MessageReceived(BMessage *message) {
 	}
 }
 
-DeskbarPulseView *DeskbarPulseView::Instantiate(BMessage *data) {
-	if (!validate_instantiation(data, "DeskbarPulseView")) return NULL;
+__declspec(dllexport) DeskbarPulseView*									//BJF
+DeskbarPulseView::Instantiate(BMessage* data) {							//BJF
+//DeskbarPulseView *DeskbarPulseView::Instantiate(BMessage *data) {
+	if (!validate_instantiation(data, "DeskbarPulseView")) return 0;	//BJF
+//	if (!validate_instantiation(data, "DeskbarPulseView")) return NULL;
 	return new DeskbarPulseView(data);
 }
 
-status_t DeskbarPulseView::Archive(BMessage *data, bool deep) const {
+status_t DeskbarPulseView::Archive(BMessage *data, bool deep) const 
+{
 	PulseView::Archive(data, deep);
 	data->AddString("add_on", APP_SIGNATURE);
 	data->AddString("class", "DeskbarPulseView");
@@ -152,15 +157,17 @@ status_t DeskbarPulseView::Archive(BMessage *data, bool deep) const {
 
 void DeskbarPulseView::Remove() {
 	// Remove ourselves from the deskbar by name
-	BDeskbar *deskbar = new BDeskbar();
-	status_t err = deskbar->RemoveItem("DeskbarPulseView");
+	BDeskbar 	deskbar;		//BJF
+//	BDeskbar *deskbar = new BDeskbar();
+	status_t err = deskbar.RemoveItem("DeskbarPulseView");
+//	status_t err = deskbar->RemoveItem("DeskbarPulseView");
 	if (err != B_OK) {
 		char temp[255];
 		sprintf(temp, "Remove(): %s", strerror(err));
 		BAlert *alert = new BAlert("Info", temp, "OK");
 		alert->Go(NULL);
 	}
-	delete deskbar;
+//	delete deskbar;
 }
 
 void DeskbarPulseView::SetMode(bool normal) {

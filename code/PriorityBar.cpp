@@ -69,6 +69,8 @@ void PriorityBar::Set(float * values) {
 	Render(false);
 }
 
+PriorityBar::~PriorityBar(){}	//added destructor
+
 // Draws the progress bar. If "all" is true the entire bar is redrawn rather
 // than just the part that changed.
 void PriorityBar::Render(bool all) {

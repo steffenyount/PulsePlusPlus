@@ -1,0 +1,31 @@
+Warning : function has no prototype
+PulseApp.cpp line 50   int GetMinimumViewWidth(Prefs * prefs, int mode) {
+Warning   : Link Warning : ignored 'initialize_before' (descriptor) in libroot.so
+Previously defined in libbe.so
+Warning   : Link Warning : ignored 'terminate_after' (descriptor) in libroot.so
+Previously defined in libbe.so
+Error   : undefined 'PriorityBar::PriorityBar(BRect,char*)' (code)
+Referenced from 'NormalPulseView::NormalPulseView(BRect,const char*,Prefs*)' 
+in /boot/home/develop/Pulse++/code/NormalPulseView.cpp
+Error   : undefined 'STR_ABOUT' (data)
+Referenced from 'CPUButton::MessageReceived(BMessage*)' in /boot/home/develop/
+Pulse++/code/CPUButton.cpp
+Referenced from 'PulseWindow::MessageReceived(BMessage*)' in /boot/home/
+develop/Pulse++/code/PulseWindow.cpp
+Referenced from 'DeskbarPulseView::MessageReceived(BMessage*)' in /boot/home/
+develop/Pulse++/code/DeskbarPulseView.cpp
+Error   : undefined 'DEFAULT_COLORS' (data)
+Referenced from 'Prefs::SetValue(BMessage*)' in /boot/home/develop/Pulse++/
+code/Prefs.cpp
+Referenced from 'ConfigView::ResetDefaults()' in /boot/home/develop/Pulse++/
+code/ConfigView.cpp
+Error   : undefined 'STR_MODE_NAMES' (data)
+Referenced from 'PrefsWindow::PrefsWindow(BRect,const 
+char*,BMessenger*,Prefs*)' in /boot/home/develop/Pulse++/code/PrefsWindow.cpp
+Referenced from 'Prefs::Archive(BMessage*,bool)' in /boot/home/develop/Pulse++/
+code/Prefs.cpp
+Error   : undefined 'STR_COLOR_NAMES' (data)
+Referenced from 'ConfigView::ConfigView(BRect,const char*,int,Prefs*)' in /
+boot/home/develop/Pulse++/code/ConfigView.cpp
+Referenced from 'Prefs::Archive(BMessage*,bool)' in /boot/home/develop/Pulse++/
+code/Prefs.cpp

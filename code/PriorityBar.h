@@ -25,6 +25,7 @@ typedef struct {
 class PriorityBar : public BView {
 	public:
 		PriorityBar(BRect r, char* name);
+		virtual ~PriorityBar();		//added destructor
 		void Draw(BRect rect);
 		void Set(float * value);
 		void UpdateColors();

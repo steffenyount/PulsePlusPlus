@@ -21,7 +21,7 @@ class DeskbarPulseView : public MiniPulseView {
 	public:
 		DeskbarPulseView(BRect rect);
 		DeskbarPulseView(BMessage *message);
-		~DeskbarPulseView();
+		virtual ~DeskbarPulseView();	//made virtual
 		void AttachedToWindow();
 		void Pulse();
 		
